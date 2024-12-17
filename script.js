@@ -20,10 +20,11 @@ const addTodo = ()=>{
     const inputEl = document.querySelector("input");
     const contentEl = document.querySelector(".content")
     const value = inputEl.value;
+    inputEl.value=""
     const newDiv = document.createElement("div")
     newDiv.setAttribute("id",ctr)
     newDiv.innerHTML = `<span><span class="index">${contentEl.children.length}</span>. <span>${value}</span></span> <button onclick="deleteTodo(${ctr})">X</button> <button onclick="updateTodo(${ctr})">Edit</button>`;
     contentEl.appendChild(newDiv)
-    inputEl.value=""
+    
     ctr++;
 }
